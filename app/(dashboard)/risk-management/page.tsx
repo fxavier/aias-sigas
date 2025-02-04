@@ -17,20 +17,11 @@ import { Textarea } from '@/components/ui/textarea';
 import {
 	AlertTriangle,
 	FileText,
-	Building2,
-	Users,
 	ClipboardList,
 	FileSearch,
 	Scale,
 	Files,
-	Upload,
 } from 'lucide-react';
-
-const DURATION_CHOICES = [
-	{ value: 'CURTO_PRAZO', label: 'Curto Prazo' },
-	{ value: 'MEDIO_PRAZO', label: 'Médio Prazo' },
-	{ value: 'LONGO_PRAZO', label: 'Longo Prazo' },
-];
 
 const EXTENSION_CHOICES = [
 	{ value: 'LOCAL', label: 'Local' },
@@ -61,11 +52,6 @@ const PROBABILITY_CHOICES = [
 	{ value: 'DEFINITIVA', label: 'Definitiva' },
 ];
 
-const STATUTE_CHOICES = [
-	{ value: 'POSITIVO', label: 'Positivo' },
-	{ value: 'NEGATIVO', label: 'Negativo' },
-];
-
 const ACTIVITY_TYPE_CHOICES = [
 	{ value: 'TURISTICA', label: 'Turística' },
 	{ value: 'INDUSTRIAL', label: 'Industrial' },
@@ -87,20 +73,6 @@ const PROVINCES = [
 	{ value: 'NAMPULA', label: 'Nampula' },
 	{ value: 'CABO_DELGADO', label: 'Cabo Delgado' },
 	{ value: 'NIASSA', label: 'Niassa' },
-];
-
-const DOCUMENT_STATE_CHOICES = [
-	{ value: 'REVISION', label: 'Revisão' },
-	{ value: 'INUSE', label: 'Em uso' },
-	{ value: 'OBSOLETE', label: 'Obsoleto' },
-];
-
-const DOCUMENT_TYPES = [
-	{ value: 'POLICY', label: 'Policy' },
-	{ value: 'PROCEDURE', label: 'Procedure' },
-	{ value: 'FORM', label: 'Form' },
-	{ value: 'REPORT', label: 'Report' },
-	{ value: 'MANUAL', label: 'Manual' },
 ];
 
 const documents = [
@@ -148,10 +120,6 @@ export default function RiskManagement() {
 						<Scale className='mr-2 h-4 w-4' />
 						Assessment
 					</TabsTrigger>
-					{/* <TabsTrigger value='departments'>
-						<Building2 className='mr-2 h-4 w-4' />
-						Departments
-					</TabsTrigger> */}
 					<TabsTrigger value='legal'>
 						<FileText className='mr-2 h-4 w-4' />
 						Legal Requirements

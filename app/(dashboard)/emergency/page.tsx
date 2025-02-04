@@ -24,15 +24,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
-import {
-	AlertTriangle,
-	FileText,
-	Clock,
-	Plus,
-	Upload,
-	Loader2,
-	Trash2,
-} from 'lucide-react';
+import { AlertTriangle, Plus, Loader2, Trash2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase/supabaseClient';
 
 const TIPO_INCIDENTE = [
@@ -41,16 +33,6 @@ const TIPO_INCIDENTE = [
 	{ value: 'Infraestruturas', label: 'Infraestruturas' },
 	{ value: 'Ambiental', label: 'Ambiental' },
 	{ value: 'Social', label: 'Social' },
-	{ value: 'Outros', label: 'Outros' },
-];
-
-const NATUREZA_EXTENSAO = [
-	{ value: 'Intoxicação leve', label: 'Intoxicação leve' },
-	{ value: 'Intoxicação grave', label: 'Intoxicação grave' },
-	{ value: 'Ferimento leve', label: 'Ferimento leve' },
-	{ value: 'Ferimento grave', label: 'Ferimento grave' },
-	{ value: 'Morte', label: 'Morte' },
-	{ value: 'Nenhum', label: 'Nenhum' },
 	{ value: 'Outros', label: 'Outros' },
 ];
 
@@ -178,13 +160,16 @@ export default function Emergency() {
 			});
 
 			form.reset();
-		} catch (error: any) {
+		} catch (error: unknown) {
 			console.error('Error submitting form:', error);
+			let errorMessage =
+				'Ocorreu um erro ao tentar salvar o relatório. Tente novamente.';
+			if (error instanceof Error) {
+				errorMessage = error.message;
+			}
 			toast({
 				title: 'Erro ao enviar relatório',
-				description:
-					error.message ||
-					'Ocorreu um erro ao tentar salvar o relatório. Tente novamente.',
+				description: errorMessage,
 				variant: 'destructive',
 			});
 		} finally {
