@@ -37,7 +37,6 @@ import {
 	Eye,
 	Edit,
 	Trash2,
-	Loader2,
 	GraduationCap,
 	ClipboardList,
 	CheckSquare,
@@ -61,11 +60,6 @@ const MONTHS = [
 	'October',
 	'November',
 	'December',
-];
-
-const TRAINING_STATUS = [
-	{ value: 'Planned', label: 'Planned' },
-	{ value: 'Completed', label: 'Completed' },
 ];
 
 const ANSWER_CHOICES = [
@@ -113,7 +107,6 @@ const evaluations = [
 
 export default function OrgCapacity() {
 	const [activeTab, setActiveTab] = useState('needs');
-	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const { toast } = useToast();
 
@@ -127,8 +120,6 @@ export default function OrgCapacity() {
 				title: 'Record submitted successfully',
 				description: 'The record has been saved in the system.',
 			});
-
-			setIsDialogOpen(false);
 		} catch (error) {
 			console.error('Error submitting record:', error);
 			toast({
@@ -230,7 +221,9 @@ export default function OrgCapacity() {
 										<Button type='button' variant='outline'>
 											Cancel
 										</Button>
-										<Button type='submit'>Submit</Button>
+										<Button type='submit' disabled={isSubmitting}>
+											Submit
+										</Button>
 									</div>
 								</form>
 							</DialogContent>
@@ -390,7 +383,9 @@ export default function OrgCapacity() {
 										<Button type='button' variant='outline'>
 											Cancel
 										</Button>
-										<Button type='submit'>Submit</Button>
+										<Button type='submit' disabled={isSubmitting}>
+											Submit
+										</Button>
 									</div>
 								</form>
 							</DialogContent>
@@ -525,7 +520,9 @@ export default function OrgCapacity() {
 										<Button type='button' variant='outline'>
 											Cancel
 										</Button>
-										<Button type='submit'>Submit</Button>
+										<Button type='submit' disabled={isSubmitting}>
+											Submit
+										</Button>
 									</div>
 								</form>
 							</DialogContent>
