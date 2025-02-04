@@ -148,10 +148,10 @@ export default function RiskManagement() {
 						<Scale className='mr-2 h-4 w-4' />
 						Assessment
 					</TabsTrigger>
-					<TabsTrigger value='departments'>
+					{/* <TabsTrigger value='departments'>
 						<Building2 className='mr-2 h-4 w-4' />
 						Departments
-					</TabsTrigger>
+					</TabsTrigger> */}
 					<TabsTrigger value='legal'>
 						<FileText className='mr-2 h-4 w-4' />
 						Legal Requirements
