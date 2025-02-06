@@ -53,10 +53,7 @@ export type SpecificObjective = {
 export type Department = {
 	id: string;
 	name: string;
-	head: string;
-	employees: number;
-	location: string;
-	contact: string;
+	description: string;
 	created_at: string;
 	updated_at: string;
 };
@@ -81,6 +78,12 @@ export type IncidentReport = {
 	incidente_envolve_empreteiro: 'Sim' | 'Não';
 	nome_comercial_empreteiro?: string;
 	natureza_e_extensao_incidente: string;
+	fotografia_frontal?: string;
+	fotografia_posterior?: string;
+	fotografia_lateral_direita?: string;
+	fotografia_lateral_esquerda?: string;
+	fotografia_do_melhor_angulo?: string;
+	fotografia?: string;
 	created_at: string;
 	updated_at: string;
 };
